@@ -15,6 +15,8 @@
 		FA529A6324730ACE0077AAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA529A6124730ACE0077AAD7 /* LaunchScreen.storyboard */; };
 		FA529A6E24730ACE0077AAD7 /* VirtualTouristTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529A6D24730ACE0077AAD7 /* VirtualTouristTests.swift */; };
 		FA529A7924730ACE0077AAD7 /* VirtualTouristUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529A7824730ACE0077AAD7 /* VirtualTouristUITests.swift */; };
+		FA529A8A24730E860077AAD7 /* VTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529A8924730E860077AAD7 /* VTMapViewController.swift */; };
+		FA529A8C247313460077AAD7 /* VTPhotoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA529A8B247313460077AAD7 /* VTPhotoMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FA529A7424730ACE0077AAD7 /* VirtualTouristUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualTouristUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA529A7824730ACE0077AAD7 /* VirtualTouristUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTouristUITests.swift; sourceTree = "<group>"; };
 		FA529A7A24730ACE0077AAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA529A8924730E860077AAD7 /* VTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTMapViewController.swift; sourceTree = "<group>"; };
+		FA529A8B247313460077AAD7 /* VTPhotoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTPhotoMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 		FA529A8824730B8C0077AAD7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA529A8924730E860077AAD7 /* VTMapViewController.swift */,
+				FA529A8B247313460077AAD7 /* VTPhotoMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,7 +291,9 @@
 			files = (
 				FA529A5B24730ACD0077AAD7 /* ViewController.swift in Sources */,
 				FA529A5724730ACD0077AAD7 /* AppDelegate.swift in Sources */,
+				FA529A8C247313460077AAD7 /* VTPhotoMapViewController.swift in Sources */,
 				FA529A5924730ACD0077AAD7 /* SceneDelegate.swift in Sources */,
+				FA529A8A24730E860077AAD7 /* VTMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
