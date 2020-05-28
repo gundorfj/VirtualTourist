@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
+        <attribute name="rawImage" optional="YES" attributeType="Binary"/>
+        <attribute name="uniformResourceId" optional="YES" attributeType="URI"/>
+        <relationship name="vtPin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VTPin" inverseName="images" inverseEntity="VTPin"/>
+    </entity>
+    <entity name="VTPin" representedClassName="VTPin" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="vtPin" inverseEntity="Image"/>
+    </entity>
+    <elements>
+        <element name="Image" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="VTPin" positionX="-54" positionY="9" width="128" height="88"/>
+    </elements>
+</model>
