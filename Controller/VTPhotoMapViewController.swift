@@ -117,7 +117,7 @@ class VTPhotoMapViewController: UIViewController, MKMapViewDelegate
          
          if pinView == nil {
              pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-             pinView!.pinTintColor = .red
+             pinView!.pinTintColor = .blue
          }
          else {
              pinView!.annotation = annotation

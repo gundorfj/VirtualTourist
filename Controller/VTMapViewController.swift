@@ -24,7 +24,7 @@ class VTMapViewController: UIViewController, MKMapViewDelegate, UIGestureRecogni
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // add Gesture Recognizer to map
+
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleTap))
         gestureRecognizer.delegate = self
         vTmapView.addGestureRecognizer(gestureRecognizer)
@@ -43,27 +43,18 @@ class VTMapViewController: UIViewController, MKMapViewDelegate, UIGestureRecogni
     func addAnnotations()
     {
         vTmapView.removeAnnotations(vTmapView.annotations)
-        
         var annotations = [MKPointAnnotation]()
         
         for pin in vTUserPins {
-            // Notice that the float values are being used to create CLLocationDegree values.
-            // This is a version of the Double type.
+
+            let latitude = CLLocationDegrees(pin.latitude)
+            let longitude = CLLocationDegrees(pin.longitude)
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             
-            let lat = CLLocationDegrees(pin.latitude)
-            let long = CLLocationDegrees(pin.longitude)
-            
-            // The lat and long are used to create a CLLocationCoordinates2D instance.
-            let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            
-            // Here we create the annotation and set its coordiate, title, and subtitle properties
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
-            
-            // Finally we place the annotation in an array of annotations.
             annotations.append(annotation)
         }
-        // When the array is complete, we add the annotations to the map.
         vTmapView.addAnnotations(annotations)
     }
     
@@ -85,10 +76,9 @@ class VTMapViewController: UIViewController, MKMapViewDelegate, UIGestureRecogni
             }
             vTUserPins.append(pin)
             
-            // Add annotation:
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
-            annotation.title = "title"
+ //           annotation.title = "title"
             vTmapView.addAnnotation(annotation)
         }
     }
@@ -102,16 +92,15 @@ class VTMapViewController: UIViewController, MKMapViewDelegate, UIGestureRecogni
         
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView!.pinTintColor = .blue
         }
         else {
             pinView!.annotation = annotation
         }
-        
+        pinView!.pinTintColor = .blue
+
         return pinView
     }
     
-    // This delegate method is implemented to respond to taps. It opens the VTPhotoMapViewController
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let controller = self.storyboard!.instantiateViewController(withIdentifier: "PhotoAlbumVC") as? VTPhotoMapViewController
         controller?.coordinate = view.annotation?.coordinate
